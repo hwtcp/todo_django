@@ -1,5 +1,0 @@
-<h1>{{ tarefas.title }}</h1>
-<p>{{ tarefas.description }}</p>
-<p>Criada em: {{ tarefas.created_at }}</p>
-<p>Status: {% if tarefas.completed %}Concluída{% else %}Pendente{% endif %}</p>
-<a href="{% url 'listar_tarefas' %}">Voltar</a>

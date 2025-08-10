@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from tasks.views import *
+from tasks.views import listar_tarefas, detalhar_tarefa, criar_tarefa, editar_tarefa, excluir_tarefa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('listar_tarefas/', listar_tarefas, name='listar_tarefas'),
+    path('', listar_tarefas, name='listar_tarefas'),  # página inicial lista tarefas
     path('<int:pk>/detalhar_tarefa/', detalhar_tarefa, name='detalhar_tarefa'),
+    path('criar_tarefa/', criar_tarefa, name='criar_tarefa'),
+    path('<int:pk>/editar_tarefa/', editar_tarefa, name='editar_tarefa'),
+    path('<int:pk>/excluir_tarefa/', excluir_tarefa, name='excluir_tarefa'),
 ]
+
 

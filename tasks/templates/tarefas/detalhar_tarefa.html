@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Detalhe da Tarefa</title>
+</head>
+<body>
+    <h1>{{ tarefas.title }}</h1>
+
+    <p><strong>Descrição:</strong> {{ tarefas.descricao }}</p>
+    <p><strong>Concluída:</strong> {% if tarefas.feito %}Sim{% else %}Não{% endif %}</p>
+    <p><strong>Criada em:</strong> {{ tarefas.data }}</p>
+
+    <a href="{% url 'listar_tarefas' %}">Voltar para a lista</a>
+</body>
+</html>
+

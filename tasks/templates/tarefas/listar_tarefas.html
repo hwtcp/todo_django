@@ -1,11 +1,24 @@
-<h1>Lista de Tarefas</h1>
-<ul>
-  {% for tarefa in tarefas %}
-    <li>
-      <a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.title }}</a>
-      {% if tarefa.completed %}✔️{% endif %}
-    </li>
-  {% empty %}
-    <li>Nenhuma tarefa cadastrada.</li>
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+
+    <a href="{% url 'criar_tarefa' %}">Criar nova tarefa</a>
+
+    <ul>
+        {% for tarefa in tarefas %}
+        <li>
+            <a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.titulo }}</a> -
+            <a href="{% url 'editar_tarefa' tarefa.pk %}">Editar</a> -
+            <a href="{% url 'excluir_tarefa' tarefa.pk %}">Excluir</a>
+        </li>
+        {% empty %}
+        <li>Nenhuma tarefa cadastrada.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
